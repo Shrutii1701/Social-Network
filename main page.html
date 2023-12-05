@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suspense Thriller</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, rgb(1, 16, 31), rgb(117, 2, 40)); 
+            color: #f1efec; 
+        }
+
+        header {
+            background: linear-gradient(to right, #54314e, rgb(235, 18, 83)); 
+            color: #f6f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav {
+            text-align: center;
+            background: linear-gradient(to right, #e656e6, rgb(229, 123, 250) 40, 65); 
+            padding: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: rgb((235, 22, 217) 44, 80); 
+        }
+
+        .matrix-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .box {
+            width: 200px;
+            height: 160px;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: linear-gradient(to right, #d90b0b, #1c0208); 
+            border: 1px solid #603269; 
+            border-radius: 8px;
+            transition: transform 0.3s, background 0.3s, color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+        }
+
+        .box img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+
+        .box:hover {
+            transform: scale(1.1);
+            background: linear-gradient(to right, rgb(208, 42, 172)rgrgb(46, 30, 42)0, 46 2e); 
+            color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); 
+        }
+
+        footer {
+            background: linear-gradient(to right, rgb(185, 73, 185)rgb(71, 40, 66)47);
+            color: #ecf0f1;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .contact-info,
+        .site-links,
+        .social-media {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .contact-info h3,
+        .site-links h3,
+        .social-media h3 {
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+            font-size: 1.2em;
+        }
+
+        .site-links ul,
+        .social-media ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .site-links li,
+        .social-media li {
+            margin-bottom: 5px;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>SUSPENSE THRILLER</h1>
+    </header>
+
+       <div class="matrix-container">
+        <div class="box aqua-box" onclick="openInfoPage('The Khandavaprastha Conspiracy.html')">
+            <img src="https://m.media-amazon.com/images/I/91qI0Qv7z7L._SY522_.jpg" alt="The Khandavaprastha Conspiracy (2022)">
+        </div>
+        <div class="box aquamarine" onclick="openInfoPage('The Portrait of a Secret.html')">
+            <img src="https://m.media-amazon.com/images/I/61wi1J1W1aL._SY445_SX342_.jpg"
+            alt="The Portrait of a Secret: A Novel Inspired by True Events">
+        </div>
+        <div class="box bisque" onclick="openInfoPage('The Housemaid.html')">
+            <img src="https://m.media-amazon.com/images/I/51XrLg97CuL._SY445_SX342_.jpg" 
+            alt="The Housemaid by Freida McFadden">
+        </div>
+        <div class="box burlywood" onclick="openInfoPage('And Then There Were None by Agatha Christie.html')">
+            <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1409600899l/9723667.jpg"
+             alt="And Then There Were None by Agatha Christie">
+        </div>
+        <div class="box cadetblue" onclick="openInfoPage('Baby Teeth.html')">
+            <img src="https://m.media-amazon.com/images/I/41LXEFn0GTL.jpg" 
+            alt="Baby Teeth: A Novel by Zoje Stage">
+        </div>
+        <div class="box darkcyan" onclick="openInfoPage('Before I Go To Sleep by S. J. Watsonn.html')">
+            <img src="https://m.media-amazon.com/images/I/51+UnWJoCVL.jpg" alt="Before I Go To Sleep by S. J. Watson">
+        </div>
+        <div class="box darkgray" onclick="openInfoPage('Big Little Lies by Liane Moriarty.html')">
+            <img src="https://m.media-amazon.com/images/I/41f2+DdJ0ZL.jpg" 
+            alt="Big Little Lies by Liane Moriarty">
+        </div>
+        <div class="box lavenderblush" onclick="openInfoPage('The Couple Next Door.html')">
+            <img src="https://m.media-amazon.com/images/I/51cbpgsfDNL.jpg" alt="The Couple Next Door: A Novel by Shari Lapena">
+        </div>
+        <div class="box mediumturquoise" onclick="openInfoPage('Descent by Tim Johnston.html')">
+            <img src="https://m.media-amazon.com/images/I/51kO2MnWsYL.jpg"
+             alt="Descent by Tim Johnston">
+        </div>
+       
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Address: Your Physical Address</p>
+                <p>Email: <a href="mishraa.shrutii17@gmail.com">Shruti Mishra</a></p>
+                <p>Email: <a href="priya.jantwal2004@gmail.com">Priya Jantwal</a></p>
+
+                
+                <p>Phone: 9918859702</p>
+            </div>
+            <div class="site-links">
+                <h3>Site Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com">Facbook</a></li>
+                    <li><a href="https://www.instagram.com/?hl=en">Instagram</a></li>
+                    <li><a href="https://twitter.com/?lang=en-in">Twitter</a></li>
+                    <li><a href="www.linkedin.com/in/shrutiimishraa">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="legal-info">
+            <p><a href="/privacy-policy">Privacy Policy</a></p>
+            <p><a href="/terms-of-service">Terms of Service</a></p>
+            <p><a href="/accessibility">Accessibility Statement</a></p>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span id="year"></span> Your Company Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        function openInfoPage(pageURL) {
+            window.open(pageURL, '_blank');n
+        }
+    </script>
+</body>
+
+</html>
